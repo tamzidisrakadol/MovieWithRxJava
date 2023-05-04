@@ -1,25 +1,20 @@
 package com.example.moviewithrxjava.repository
 
 
-enum class Status{
+enum class Status {
     Running,
     Success,
     Failed
 
 }
-class NetworkState(val status: Status,val msg:String) {
 
-    companion object{
+class NetworkState(val status: Status, val msg: String) {
 
-        private val Loaded:NetworkState
-        private val Loading:NetworkState
-        private val Failed:NetworkState
+    companion object {
 
-        init {
-            Loaded = NetworkState(Status.Success,"Success")
-            Loading = NetworkState(Status.Running,"Loading")
-            Failed = NetworkState(Status.Failed,"Failed")
-        }
+        val Loaded: NetworkState = NetworkState(Status.Success, "Success")
+        val Loading: NetworkState = NetworkState(Status.Running, "Loading")
+        val Failed: NetworkState = NetworkState(Status.Failed, "Failed")
 
     }
 
