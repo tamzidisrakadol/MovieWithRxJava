@@ -1,5 +1,7 @@
 package com.example.moviewithrxjava.repository
 
+import android.net.Network
+
 
 enum class Status {
     Running,
@@ -15,6 +17,7 @@ class NetworkState(val status: Status, val msg: String) {
         val Loaded: NetworkState = NetworkState(Status.Success, "Success")
         val Loading: NetworkState = NetworkState(Status.Running, "Loading")
         val Failed: NetworkState = NetworkState(Status.Failed, "Failed")
+        val EndOfList:NetworkState = NetworkState(Status.Failed,"You have reached the end")
 
     }
 

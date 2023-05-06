@@ -23,8 +23,7 @@ class MovieDetailActivity : AppCompatActivity() {
         val viewModel = ViewModelProvider(this,MovieDetailsModelFactory(repository,movieId))[SingleMovieViewModel::class.java]
 
         viewModel.movieDetails.observe(this, Observer {
-            val movieDetailsModel = MovieDetailsModel()
-            Log.d("movie","title = ${movieDetailsModel.title}")
+            Log.d("movie","title = ${it.title}")
 
         })
     }
