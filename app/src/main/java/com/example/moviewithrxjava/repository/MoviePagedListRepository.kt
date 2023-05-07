@@ -2,6 +2,7 @@ package com.example.moviewithrxjava.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.switchMap
+
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.example.moviewithrxjava.model.MovieModel
@@ -26,10 +27,10 @@ class MoviePagedListRepository(private val apiService:MovieDBInterface) {
         return moviePagedList
     }
 
-//    fun getNetworkState():LiveData<NetworkState>{
-//        return moviePagedList.switchMap {
-//
-//        }
-//    }
+    fun getNetworkState(): LiveData<NetworkState> {
+        return movieDataSourceFactory.movieLiveDataSource.switchMap {
+            it.networkState
+        }
+    }
 
 }

@@ -10,12 +10,13 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 
 class MovieDataSource(
-    val apiService: MovieDBInterface,
-    val compositeDisposable: CompositeDisposable
+    private val apiService: MovieDBInterface,
+    private val compositeDisposable: CompositeDisposable
 ) : PageKeyedDataSource<Int, MovieModel>() {
 
     private var page = Constraints.FIRST_PAGE
-    private val networkState: MutableLiveData<NetworkState> = MutableLiveData()
+
+    val networkState: MutableLiveData<NetworkState> = MutableLiveData()
 
 
     override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, MovieModel>) {
