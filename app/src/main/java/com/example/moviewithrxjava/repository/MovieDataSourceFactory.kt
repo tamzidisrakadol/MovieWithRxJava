@@ -10,9 +10,7 @@ class MovieDataSourceFactory(private val apiService:MovieDBInterface, private va
 
      val movieLiveDataSource = MutableLiveData<MovieDataSource>()
 
-
     override fun create(): DataSource<Int, MovieModel> {
-
         val movieDataSource = MovieDataSource(apiService,compositeDisposable)
         movieLiveDataSource.postValue(movieDataSource)
         return movieDataSource

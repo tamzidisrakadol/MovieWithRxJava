@@ -1,10 +1,5 @@
 package com.example.moviewithrxjava.utility
 
-import com.example.moviewithrxjava.network.MovieDBInterface
-import okhttp3.Interceptor
-import okhttp3.OkHttpClient
-import retrofit2.Retrofit
-import java.util.concurrent.TimeUnit
 
 object Constraints {
 

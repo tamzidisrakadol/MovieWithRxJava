@@ -5,9 +5,13 @@ import androidx.lifecycle.switchMap
 
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
 import com.example.moviewithrxjava.model.MovieModel
 import com.example.moviewithrxjava.network.MovieDBInterface
 import com.example.moviewithrxjava.utility.Constraints
+import com.google.ar.core.Config
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 
 class MoviePagedListRepository(private val apiService:MovieDBInterface) {
@@ -26,6 +30,7 @@ class MoviePagedListRepository(private val apiService:MovieDBInterface) {
         moviePagedList = LivePagedListBuilder(movieDataSourceFactory,config).build()
         return moviePagedList
     }
+
 
     fun getNetworkState(): LiveData<NetworkState> {
         return movieDataSourceFactory.movieLiveDataSource.switchMap {

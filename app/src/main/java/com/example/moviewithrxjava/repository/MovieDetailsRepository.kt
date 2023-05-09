@@ -5,7 +5,7 @@ import com.example.moviewithrxjava.model.MovieDetailsModel
 import com.example.moviewithrxjava.network.MovieDBInterface
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 
-class MovieDetailsRepository(val apiService:MovieDBInterface) {
+class MovieDetailsRepository(private val apiService:MovieDBInterface) {
 
     lateinit var movieDetailsNetworkDataSource: MovieDetailsNetworkDataSource
 

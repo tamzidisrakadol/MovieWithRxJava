@@ -1,7 +1,5 @@
 package com.example.moviewithrxjava.repository
 
-import android.net.Network
-
 
 enum class Status {
     Running,

@@ -12,7 +12,7 @@ class PopularMovieViewModel(private val moviePagedListRepository: MoviePagedList
 
     private val compositeDisposable = CompositeDisposable()
 
-    val moviePagedList :LiveData<PagedList<MovieModel>> by lazy {
+    val moviePagedList  by lazy {
         moviePagedListRepository.fetchLivePagedList(compositeDisposable)
     }
 
